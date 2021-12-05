@@ -3,11 +3,13 @@ package games;
 import java.util.ArrayList;
 
 import people.Player;
+import people.User;
 
 public class Game {
 
 	private String name;
 	private ArrayList<Player> topScorers;
+	private User currentUser;
 	
 	public Game() {
 		this.name = "";
@@ -38,6 +40,9 @@ public class Game {
 		return 1;
 	}
 	
-	
-	
+	public void sendScoreToUser() {
+		int score = this.getScore();
+		
+		this.currentUser.saveScore(score);
+	}
 }
