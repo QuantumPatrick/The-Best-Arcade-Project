@@ -1,10 +1,11 @@
 package people;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 import games.Game;
 
-public class User {
+public class User implements Serializable {
 	// attributes
 	protected String name;
 	protected boolean isGuest; // FIXME: add to UML
@@ -54,5 +55,7 @@ public class User {
 		return highScores;
 	}
 	
-	
+	public void saveScore(int score) {
+		this.setPersonalHigh(score);
+	}
 }
